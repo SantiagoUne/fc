@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Cumpleaños Papá</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+      body {
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        background-color: #001f3f;
+        color: #ffffff;
+      }
+      h1 {
+        font-size: 3em;
+        margin-top: 50px;
+      }
+      p {
+        font-size: 1.2em;
+        margin: 20px 0;
+      }
+      .slideshow-container {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+      }
+      .mySlides {
+        display: none;
+        animation: fade 1s;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto; /* Mantiene la proporción de la imagen */
+      }
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FELIZ CUMPLEAÑOS AL MEJOR PAPÁ DEL MUNDO</h1>
+    <p>
+      Felicidades al hombre más increíble a quien tengo la suerte y el honor de
+      llamar “papá”. Ser tu hijo es sin duda la bendición más grande que he
+      recibido.
+    </p>
+    <p>
+      En tu cumpleaños, quiero agradecerte todo lo que haces por mí, por mis
+      hermanos, por mariangel, por mis abuelos, por mis tios y por charlie,
+      Siempre fuiste y seguirás siendo mi héroe, el mayor ejemplo de hombre que
+      conozco. feliz cumpleaños
+    </p>
+
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="./img/1.jpeg" alt="Foto 1" />
+      </div>
+      <div class="mySlides">
+        <img src="./img/2.jpeg" alt="Foto 2" />
+      </div>
+      <div class="mySlides">
+        <img src="./img/3.jpeg" alt="Foto 3" />
+      </div>
+      <div class="mySlides">
+        <img src="./img/4.jpeg" alt="Foto 4" />
+      </div>
+      <div class="mySlides">
+        <img src="./img/5.jpeg" alt="Foto 5" />
+      </div>
+      <div class="mySlides">
+        <img src="./img/6.jpeg" alt="Foto 6" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" id="nextBtn" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let nextBtn = document.getElementById("nextBtn");
+        let prevBtn = document.querySelector(".prev");
+        if (n > slides.length) {
+          slideIndex = slides.length;
+        }
+        if (n < 1) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        nextBtn.style.display = slideIndex === slides.length ? "none" : "block";
+        prevBtn.style.display = slideIndex === 1 ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
